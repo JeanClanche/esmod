@@ -4,24 +4,53 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Collection - Presentation</title>
+        <title>Collection - Présentation</title>
 
         <link rel="stylesheet" href="bootstrap-5.3.8/css/bootstrap.css">
-        <script src="bootstrap 5.3.8/js/bootstrap.js"></script>
+        <script src="bootstrap-5.3.8/js/bootstrap.js"></script>
 
         <link rel="icon" type="image/x-icon" href="images/logo.png">
     </head>
 
     <body class="">
+        <script src="includes/navbar.js"></script>
         <div class="container">
             <div class="row m-1 p-2">
                 <h1>Marie Ratayzyk - Hessmod</h1>
             </div>
+
+            <!-- première ligne -->
             <div class="row bg-danger rounded m-1 p-2">
-                <div class="col">
-                    a
+                <!-- caroussel -->
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/placeholder.webp" class="img-fluid d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/placeholder.webp" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/placeholder.webp" class="d-block w-100">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
             </div>
+
         </div>
     </body>
 
