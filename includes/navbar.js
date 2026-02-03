@@ -4,7 +4,7 @@ let navbar = `
 <nav class="navbar navbar-expand-lg sticky-top nav-underline">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" width="30" height="30" class="d-inline-block align-text-top"/>
+            <img src="images/logo.png" width="30" height="30" class="d-inline-block align-text-center"/>
             Ratayzyk
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-theme="dark">
