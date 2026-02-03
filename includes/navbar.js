@@ -41,6 +41,13 @@ let navbar = `
                     `" href="manteaux.html">Manteaux</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link`
+                    if(page == "robes.html"){navbar+=" active"}
+                    navbar +=
+                    `" href="robes.html">Robes</a>
+                </li>
+
             </ul>
         </div>
     </div>
