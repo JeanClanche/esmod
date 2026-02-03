@@ -11,10 +11,10 @@ document.write(`
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#ensemble_1">Ensembles</a>
+                    <a class="nav-link" href="index.html">Ensembles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#haut_1">Hauts</a>
+                    <a class="nav-link" href="hauts.html">Hauts</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Pantalons</a>
@@ -24,3 +24,5 @@ document.write(`
     </div>
 </nav>
 `)
+const url = window.location.pathname.split('/')
+console.log(url.findLast())
