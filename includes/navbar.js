@@ -1,4 +1,6 @@
-document.write(`
+const url = window.location.pathname.split('/')
+const page = url[url.length -1]
+let navbar = `
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top nav-underline">
     <div class="container-fluid">
         <a class="navbar-brand" href="">
@@ -10,19 +12,38 @@ document.write(`
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Ensembles</a>
+                    <a class="nav-link`
+                    if(page == "index.html"){navbar+=" active"}
+                    navbar +=
+                    `" href="index.html">Hauts</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="hauts.html">Hauts</a>
+                    <a class="nav-link`
+                    if(page == "pantalons.html"){navbar+=" active"}
+                    navbar +=
+                    `" href="pantalons.html">Pantalons</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="">Pantalons</a>
+                    <a class="nav-link`
+                    if(page == "vestes.html"){navbar+=" active"}
+                    navbar +=
+                    `" href="vestes.html">Vestes</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link`
+                    if(page == "manteaux.html"){navbar+=" active"}
+                    navbar +=
+                    `" href="manteaux.html">Manteaux</a>
+                </li>
+
             </ul>
         </div>
     </div>
 </nav>
-`)
-const url = window.location.pathname.split('/')
-console.log(url.findLast())
+`
+document.write(navbar)
