@@ -1,11 +1,18 @@
+/* couleur de la navbar */
 .navbar{
     background-color: #987654 !important;
 }
 
+/* couleur du texte de la navbar */
 .nav-link, .navbar-brand{
-    color: #ffffffc5 !important;
+    color: #88130a !important;
 }
 
+/* couleur du background */
 body{
-    background-color: #E0CD96 !important;
+    background-color: #d6c9ba !important;
 }
+
+/*
+bordeaux : #88130a
+*/
