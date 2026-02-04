@@ -11,23 +11,26 @@ document.addEventListener("DOMContentLoaded", async function() {//quand la page 
     await addNav()
     let element
     switch(page){
+        case "":
+            elements = "hauts"
+            break
         case "index.html" :
-            element="hauts"
+            element = "hauts"
             break
         case "pantalons.html":
-            element="pantalons"
+            element = "pantalons"
             break
         case "vestes.html":
-            element="vestes"
+            element = "vestes"
             break
         case "robes.html":
             element = "robes"
             break
         case "manteaux.html":
-            element="manteaux"
+            element = "manteaux"
             break
         default:
-            element="hauts"
+            element = "hauts"
 
     }
     document.getElementById(element).classList.add("active")
