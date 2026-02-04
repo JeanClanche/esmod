@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function() {//quand la page 
     let element
     switch(page){
         case "":
-            elements = "hauts"
+            element = "hauts"
             break
         case "index.html" :
             element = "hauts"
