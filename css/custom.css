@@ -9,7 +9,7 @@
 }
 
 /* couleur du background */
-body{
+body, .modal-content{
     font-family: Georgia;
     background-color: #d6c9ba !important;
 }
