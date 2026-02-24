@@ -1,6 +1,8 @@
+//récupération de l'url actuel
 const url = window.location.pathname.split('/')
 const page = url[url.length -1]
 
+//inserre la navbar dans le document
 async function addNav() {
     const resp = await fetch("includes/navbar.html");
     const html = await resp.text();
