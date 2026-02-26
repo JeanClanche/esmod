@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", async function() {//quand la page 
         case "":
             element = "hauts"
             break
-        case "index.html" :
+        case "index" :
             element = "hauts"
             break
-        case "pantalons.html":
+        case "pantalons":
             element = "pantalons"
             break
-        case "vestes.html":
+        case "vestes":
             element = "vestes"
             break
-        case "robes.html":
+        case "robes":
             element = "robes"
             break
-        case "manteaux.html":
+        case "manteaux":
             element = "manteaux"
             break
         default:
