@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {//quand la page est chargée
     leModal = new bootstrap.Modal(this.getElementById('leModal'))
 
+    //change le curseur sur les images
+    const imgs = document.querySelectorAll('img')
+    imgs.forEach(function(img){
+        img.style.cursor = "zoom-in"
+    })
+
 });
 
 //ajoute les images dans le caroussel du modal, puis affiche ce dernier
