@@ -3,8 +3,8 @@
         "name" : "Plastron en Netherite",
         "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "images" : [
-            "images/collection/IMG_4772.jpg",
-            "images/collection/IMG_4773.jpg"
+            "images/collection/look_1/leather_alex.png",
+            "images/collection/look_1/leather_steve.png"
         ],
         "liste" : [
             "item 1",            

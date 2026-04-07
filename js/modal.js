@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", async function() {//quand la page 
         case "manteaux":
             element = "manteaux"
             break
+        case "jupes":
+            element = "jupes"
+            break
         default:
             element = "hauts"
 
