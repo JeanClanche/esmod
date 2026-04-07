@@ -62,7 +62,8 @@ async function remplirPoulet(){
     /**
      * remplis la row contenant les différents vetements, avec pour chacun un caroussel et une card descriptive
      */
-    const json = await fetch('data/hauts.json')
+
+    const json = await fetch(`data/hauts.json`)
     const data = await JSON.parse(await json.text())
 
     let i = 0

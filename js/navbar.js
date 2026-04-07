@@ -15,10 +15,7 @@ document.addEventListener("DOMContentLoaded", async function() {//quand la page 
     await addNav()
     let element
     switch(page){
-        case "":
-            element = "hauts"
-            break
-        case "index" :
+        case "index" || "" :
             element = "hauts"
             break
         case "pantalons":
