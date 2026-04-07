@@ -1,6 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {//quand la page est chargée
-    leModal = new bootstrap.Modal(this.getElementById('leModal'))
+//récupération de l'url actuel
+const url = window.location.pathname.split('/')
+const page = url[url.length -1]
 
+document.addEventListener("DOMContentLoaded", async function() {//quand la page est chargée
+    await addNav()
+    await addModal()
+    element = ""
+    switch(page){
+        case "index" || "" :
+            element = "hauts"
+            break
+        case "pantalons":
+            element = "pantalons"
+            break
+        case "vestes":
+            element = "vestes"
+            break
+        case "robes":
+            element = "robes"
+            break
+        case "manteaux":
+            element = "manteaux"
+            break
+        default:
+            element = "hauts"
+
+    }
+    document.getElementById(element).classList.add("active")
+    leModal = new bootstrap.Modal(this.getElementById('leModal'))
     remplirPoulet()
 });
 
@@ -63,7 +90,7 @@ async function remplirPoulet(){
      * remplis la row contenant les différents vetements, avec pour chacun un caroussel et une card descriptive
      */
 
-    const json = await fetch(`data/hauts.json`)
+    const json = await fetch(`data/${element}.json`)
     const data = await JSON.parse(await json.text())
 
     let i = 0
@@ -180,4 +207,18 @@ async function remplirPoulet(){
         document.getElementById('poulet').append(hr, row)
         i++
     })
+}
+
+
+//inserre la navbar dans le document
+async function addNav() {
+    const resp = await fetch("includes/navbar.html");
+    const html = await resp.text();
+    document.body.insertAdjacentHTML("afterbegin", html);
+}
+//inserre le modal dans le document
+async function addModal() {
+    const resp = await fetch("includes/modal.html");
+    const html = await resp.text();
+    document.body.insertAdjacentHTML("beforeend", html);
 }
