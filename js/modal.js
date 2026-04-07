@@ -160,7 +160,7 @@ async function remplirPoulet(){
             const item = document.createElement('div')
             item.classList.add('carousel-item')
             const img = document.createElement('img')
-            img.classList.add('d-block', 'w-100', `a${i}`)
+            img.classList.add('d-block', 'w-100', `a${i}`, 'rounded-5')
             img.setAttribute('src', `${ee}`)
             img.setAttribute('onclick', `modal("a${i}")`)
             if(j == 0){
