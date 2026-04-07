@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {//quand la page est chargée
     leModal = new bootstrap.Modal(this.getElementById('leModal'))
 
-    remplirPoulet()
 });
 
 //ajoute les images dans le caroussel du modal, puis affiche ce dernier

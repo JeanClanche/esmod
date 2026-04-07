@@ -11,6 +11,7 @@
 
         <script src="bootstrap-5.3.8/js/bootstrap.js"></script>
         <script src="js/navbar.js"></script>
+        <script src="js/modal.js"></script>
 
         <link rel="icon" type="image/x-icon" href="images/logo.png">
     </head>
@@ -36,10 +37,10 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/collection/look_1/leather_alex.png" class="d-block w-100">
+                                <img src="images/collection/look_1/leather_alex.png" class="d-block w-100 a" onclick="modal('a')">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/collection/look_1/leather_steve.png" class="d-block w-100">
+                                <img src="images/collection/look_1/leather_steve.png" class="d-block w-100 a" onclick="modal('a')">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -75,6 +76,48 @@
             </div>
 
         </div>
+
+        
+
+        <!-- modal -->         
+        <div class="modal fade" id="leModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Photos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- caroussel du modal -->
+                        <div id="carouselModal" class="carousel slide">
+                            <div class="carousel-indicators" id="carouselModalIndicators">
+                            </div>
+
+                            <div class="carousel-inner" id="carouselModalBody">
+                                
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselModal" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+
+                        </div>
+                         <!-- fin caroussel modal -->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- fin modal -->
+
     </body>
 
 </html>
