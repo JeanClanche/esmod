@@ -74,7 +74,7 @@ async function remplirPoulet(){
 
         //création d'un caroussel
         const row = document.createElement('div')
-        row.classList.add('row', 'rounded', 'mx-1', 'my-3', 'p-2', 'justify-content-center', 'd-flex')
+        row.classList.add('row', 'rounded', 'mx-1', 'my-5', 'p-2', 'justify-content-center', 'd-flex')
 
         const colCaroussel = document.createElement('div')
         colCaroussel.classList.add('col-md-4', 'text-center', 'align-self-center')
