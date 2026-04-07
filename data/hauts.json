@@ -1,0 +1,28 @@
+[
+    {
+        "name" : "Plastron en Netherite",
+        "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "images" : [
+            "images/collection/hauts/netherite.png",
+            "images/collection/hauts/netherite.gif"
+        ],
+        "liste" : [
+            "item 1",            
+            "item 2",            
+            "item 3"            
+        ]
+    },
+    {
+        "name" : "Plastron en cuivre",
+        "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "images" : [
+            "images/collection/hauts/copper.png",
+            "images/collection/hauts/copper.webp"
+        ],
+        "liste" : [
+            "item 1",            
+            "item 2",            
+            "item 3"            
+        ]
+    }
+]

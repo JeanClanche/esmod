@@ -9,6 +9,8 @@ async function addNav() {
     document.body.insertAdjacentHTML("afterbegin", html);
 }
 
+
+//page active dans la navbar
 document.addEventListener("DOMContentLoaded", async function() {//quand la page est chargée
     await addNav()
     let element

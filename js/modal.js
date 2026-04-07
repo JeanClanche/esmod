@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {//quand la page est chargée
     leModal = new bootstrap.Modal(this.getElementById('leModal'))
 
+    remplirPoulet()
 });
 
 //ajoute les images dans le caroussel du modal, puis affiche ce dernier
@@ -55,4 +56,127 @@ function clearCarousel(){
     while(d.lastChild){
         d.removeChild(d.lastChild)
     }
+}
+
+async function remplirPoulet(){
+    /**
+     * remplis la row contenant les différents vetements, avec pour chacun un caroussel et une card descriptive
+     */
+    const json = await fetch('data/hauts.json')
+    const data = await JSON.parse(await json.text())
+
+    let i = 0
+    data.forEach((e) => {
+        //pour chaque vêtement        
+
+        const hr = document.createElement('hr')
+
+        //création d'un caroussel
+        const row = document.createElement('div')
+        row.classList.add('row', 'rounded', 'mx-1', 'my-3', 'p-2', 'justify-content-center', 'd-flex')
+
+        const colCaroussel = document.createElement('div')
+        colCaroussel.classList.add('col-md-4', 'text-center', 'align-self-center')
+        if(i%2 == 1){
+            colCaroussel.classList.add('order-md-last')
+        }
+
+        const caroussel = document.createElement('div')
+        caroussel.classList.add('carousel', 'slide', 'm-3')
+        caroussel.setAttribute('id', `car${i}`)
+
+        //conteneur pour les indicateurs en bas du caroussel
+        const indicators = document.createElement('div')
+        indicators.classList.add('carousel-indicators')
+
+        //conteneur pour les div.carousel-item contenant les images
+        const inner = document.createElement('div')
+        inner.classList.add('carousel-inner')
+
+        //bouton précédent
+        const prec = document.createElement('button')
+        prec.classList.add('carousel-control-prev')
+        prec.setAttribute('type', 'button')
+        prec.setAttribute('data-bs-target', `#car${i}`)
+        prec.setAttribute('data-bs-slide', 'prev')
+        const iconPrec = document.createElement('span')
+        iconPrec.classList.add('carousel-control-prev-icon')
+        const precTxt = document.createElement('span')
+        precTxt.classList.add('visually-hidden')
+        precTxt.textContent = "Précédent"
+        prec.append(iconPrec, precTxt)
+
+        //bouton suivant
+        const suiv = document.createElement('button')
+        suiv.classList.add('carousel-control-next')
+        suiv.setAttribute('type', 'button')
+        suiv.setAttribute('data-bs-target', `#car${i}`)
+        suiv.setAttribute('data-bs-slide', 'next')
+        const iconSuiv = document.createElement('span')
+        iconSuiv.classList.add('carousel-control-next-icon')
+        const suivTxt = document.createElement('span')
+        suivTxt.classList.add('visually-hidden')
+        suivTxt.textContent = "Suivant"
+        suiv.append(iconSuiv, suivTxt)
+
+        let j = 0
+        e['images'].forEach((ee) => {
+            // pour chaque image du vêtement
+            const indicateur = document.createElement('button')
+            indicateur.setAttribute('type', 'button')
+            indicateur.setAttribute('data-bs-target', `#car${i}`)
+            indicateur.setAttribute('data-bs-slide-to', `${j}`)
+            const item = document.createElement('div')
+            item.classList.add('carousel-item')
+            const img = document.createElement('img')
+            img.classList.add('d-block', 'w-100', `a${i}`)
+            img.setAttribute('src', `${ee}`)
+            img.setAttribute('onclick', `modal("a${i}")`)
+            if(j == 0){
+                indicateur.classList.add('active')
+                item.classList.add('active')
+            }
+            item.append(img)
+            inner.append(item)
+            indicators.append(indicateur)
+            j++
+        })
+        //fin de la création du caroussel
+
+        //création d'une carte
+        const colCard = document.createElement('div')
+        colCard.classList.add('col')
+        const card = document.createElement('div')
+        card.classList.add('card', 'border-danger')
+        const cardHeader = document.createElement('div')
+        cardHeader.classList.add('card-header')
+        const cardTitle = document.createElement('h5')
+        cardTitle.classList.add('card-title', 'mb-0')
+        cardTitle.textContent = e['name']
+        const cardBody = document.createElement('div')
+        cardBody.classList.add('card-body')
+        const cardTxt = document.createElement('p')
+        cardTxt.classList.add('card-text')
+        cardTxt.textContent = e['desc']
+
+        const cardList = document.createElement('ul')
+        cardList.classList.add('list-group', 'list-group-flush')
+        e['liste'].forEach((eee) => {
+            const li = document.createElement('li')
+            li.classList.add('list-group-item')
+            li.textContent = eee
+            cardList.append(li)
+        })
+        
+        cardBody.append(cardTxt, cardList)
+        cardHeader.append(cardTitle)
+        card.append(cardHeader, cardBody)
+        colCard.append(card)
+
+        caroussel.append(indicators, inner, prec, suiv)
+        colCaroussel.append(caroussel)
+        row.append(colCaroussel, colCard)
+        document.getElementById('poulet').append(hr, row)
+        i++
+    })
 }
